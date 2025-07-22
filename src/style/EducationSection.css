@@ -1,0 +1,55 @@
+.education-modern-section {
+  padding: 80px 20px;
+  background-color: #fff; /* or remove this line for transparent */
+}
+
+.edu-card {
+  background-color: #f0f4f8; /* soft modern color for the card */
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #333;
+}
+
+/* Optional: Styling for text */
+.degree {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.department,
+.university,
+.year {
+  font-size: 1rem;
+  margin-top: 8px;
+  color: #555;
+}
+
+.edu-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #222;
+}
+.edu-heading {
+  font-family: 'Playfair Display', serif; /* Use 'Poppins' for modern sans-serif feel */
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  position: relative;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.edu-heading::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(to right, #007bff, #00c6ff);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}

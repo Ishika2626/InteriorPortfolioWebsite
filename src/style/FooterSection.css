@@ -1,0 +1,51 @@
+/* FooterSection.css */
+
+.footer-section {
+  background-color: #1f2937;  /* Dark Gray */
+  color: #f3f4f6;             /* Light text */
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.footer-tagline {
+  font-style: italic;
+  color: #cbd5e1;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+.footer-contact p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+}
+
+.footer-contact a {
+  color: #f3f4f6;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-contact a:hover {
+  color: #00c6ff;
+}
+.footer-developed {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.developer-name {
+  color: #00c6ff;
+  font-weight: 600;
+}

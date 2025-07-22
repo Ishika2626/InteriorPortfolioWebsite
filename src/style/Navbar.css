@@ -1,0 +1,67 @@
+/* Fancy brand with gradient */
+.fancy-brand {
+  font-weight: 700;
+  font-size: 1.8rem;
+  background: linear-gradient(90deg, #007bff, #6610f2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Fancy span to highlight second word */
+.fancy-brand span {
+  color: #000;
+}
+
+/* Navbar link underline animation */
+.nav-links .nav-link {
+  position: relative;
+  margin-left: 1.2rem;
+  font-weight: 500;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.nav-links .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #007bff;
+  transition: width 0.3s;
+}
+
+.nav-links .nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-links .nav-link:hover {
+  color: #007bff;
+}
+
+/* Contact button link */
+.contact-btn {
+  padding: 0.4rem 1rem;
+  margin-left: 1.5rem;
+  background-color: #007bff;
+  border-radius: 30px;
+  color: white !important;
+  transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .nav-links .nav-link {
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-btn {
+    margin-left: 0;
+  }
+}
