@@ -16,8 +16,17 @@ function FooterSection() {
   </div>
 
  <p className="footer-developed">
-  Developed by Ishika Jariwala. <a href="mailto:ishikaj2111@gmail.com">Need a website?</a>
+  Developed by Ishika Jariwala.{" "}
+ <a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=ishikaj2111@gmail.com&su=Website%20Inquiry&body=Hi%20Ishika%2C%0AI%20am%20interested%20in%20creating%20a%20website."
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Need a website?
+</a>
+
 </p>
+
 
 </div>
 
