@@ -3,31 +3,18 @@
   background-color: #f9fafb;
   font-family: 'Segoe UI', sans-serif;
 }
-.about-card {
-  max-width: 1200px;
-  height: 430px;
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  padding: 20px 30px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  gap: 40px; /* 👈 Add this */
-}
-
-
-
 
 .about-heading {
   font-family: 'Playfair Display', serif;
   font-size: 2.8rem;
   font-weight: 600;
   color: #1f2937;
-  margin-bottom: 1rem;
+  text-align: center;
   position: relative;
   text-transform: capitalize;
+  margin-bottom: 1.5rem;
   letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .about-heading::after {
@@ -36,18 +23,41 @@
   width: 70px;
   height: 4px;
   background: linear-gradient(to right, #007bff, #00c6ff);
-  margin: 8px auto 0;
+  margin: 10px auto 0;
   border-radius: 2px;
 }
 
-.profile-img {
-  max-width: 300px;     /* Image restricted to 300px */
-  width: 100%;          /* Stays responsive */
+
+.about-card {
+  max-width: 1200px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 30px 40px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Small Circular Profile Image */
+.profile-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
   display: block;
+  transition: transform 0.3s ease;
+}
+
+
+.profile-img:hover {
+  transform: scale(1.05);
 }
 
 .about-description {
@@ -55,10 +65,39 @@
   line-height: 1.8;
   color: #333;
   text-align: justify;
+  flex: 1;
+  min-width: 280px;
 }
 
-/* Optional: Animations (already handled by framer-motion, but can add hover/extra) */
-.profile-img:hover {
-  transform: scale(1.03);
-  transition: transform 0.3s ease;
+/* 🌐 Responsive: Tablet & Mobile */
+@media (max-width: 768px) {
+  .about-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .about-description {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .about-heading {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-heading {
+    font-size: 1.8rem;
+  }
+
+  .about-description {
+    font-size: 0.95rem;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
 }

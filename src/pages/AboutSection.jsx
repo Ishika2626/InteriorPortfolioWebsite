@@ -1,6 +1,6 @@
 import React from "react";
 import "../style/AboutSection.css";
-import profileImg from "../image/darsh1.jpg";
+import profileImg from "../image/darsh.jpg";
 import { motion } from "framer-motion";
 
 function AboutSection() {
@@ -17,10 +17,11 @@ function AboutSection() {
             transition={{ duration: 1 }}
           >
             <img
-              src={profileImg}
-              alt="Darsh Jariwala"
-              className="img-fluid profile-img"
-            />
+  src={profileImg}
+  alt="Darsh Jariwala"
+  className="profile-img"
+/>
+
           </motion.div>
 
           {/* 👉 Text from Right */}
@@ -30,14 +31,15 @@ function AboutSection() {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <p>
-              Hello! I’m <strong>Darsh Jariwala</strong>, a passionate interior designer based in Gujarat.
-              I hold a Bachelor's degree in Interior Design from Veer Narmad South Gujarat University.
-              <br /><br />
-              I focus on turning creative ideas into functional, elegant, and personal spaces—whether
-              it's a home, office, or showroom. With an eye for detail and a love for modern design,
-              I combine aesthetics and functionality to bring interiors to life.
-            </p>
+          <p>
+  Hello! I’m <strong>Darsh Jariwala</strong>, a passionate interior designer based in Gujarat with a Bachelor's degree in Interior Design from Veer Narmad South Gujarat University.
+  <br /><br />
+  I specialize in creating functional, modern, and aesthetically pleasing spaces—whether residential, commercial, or retail.
+  With a strong focus on detail, balance, and usability, I bring a fresh and client-focused approach to every project.
+  <br /><br />
+  My goal is to design spaces that not only look beautiful but feel purposeful and personal to those who use them.
+</p>
+
           </motion.div>
         </div>
       </div>
