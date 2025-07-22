@@ -57,7 +57,7 @@ desc: "Elegant and space-efficient modular kitchen design with modern appliances
               custom={i}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ amount: 0.5  }}
               variants={cardVariants}
             >
               <motion.div

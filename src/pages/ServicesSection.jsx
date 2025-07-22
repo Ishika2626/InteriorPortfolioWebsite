@@ -69,7 +69,7 @@ function ServicesSection() {
               custom={index}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ amount: 0.5  }}
               variants={cardVariants}
             >
               <div className="service-icon">{service.icon}</div>

@@ -12,7 +12,7 @@ function EducationSection() {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
+          viewport={{ amount: 0.5  }}
         >
           <h5 className="degree">Bachelor of Interior Design</h5>
           <p className="department">Department of Interior Design</p>

@@ -35,7 +35,7 @@ function ContactSection() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+          viewport={{ amount: 0.5  }}
         >
           Contact Me
         </motion.h2>
@@ -54,7 +54,7 @@ function ContactSection() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          viewport={{ amount: 0.5  }}
         >
           <form ref={form} onSubmit={sendEmail} className="contact-form">
             <div className="form-group">
