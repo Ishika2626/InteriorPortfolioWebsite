@@ -2,15 +2,12 @@
 .fancy-brand {
   font-weight: 700;
   font-size: 1.8rem;
-  background: linear-gradient(90deg, #007bff, #6610f2);
+  background: linear-gradient(90deg, #fff5e1, #e0c097);
+/* cream to gold */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Fancy span to highlight second word */
-.fancy-brand span {
-  color: #000;
-}
 
 /* Navbar link underline animation */
 .nav-links .nav-link {

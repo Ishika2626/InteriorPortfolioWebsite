@@ -3,9 +3,24 @@
   background-color: #f9fafb;
   font-family: 'Segoe UI', sans-serif;
 }
+.about-card {
+  max-width: 1200px;
+  height: 430px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 20px 30px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 40px; /* 👈 Add this */
+}
+
+
+
 
 .about-heading {
-  font-family: 'Playfair Display', serif; /* or try 'Poppins' or 'Montserrat' */
+  font-family: 'Playfair Display', serif;
   font-size: 2.8rem;
   font-weight: 600;
   color: #1f2937;
@@ -25,45 +40,25 @@
   border-radius: 2px;
 }
 
-
 .profile-img {
-  max-width: 100%;
+  max-width: 300px;     /* Image restricted to 300px */
+  width: 100%;          /* Stays responsive */
   height: auto;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  display: block;
 }
 
 .about-description {
   font-size: 1.1rem;
   line-height: 1.8;
   color: #333;
-}
-@keyframes slideInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  text-align: justify;
 }
 
-@keyframes slideInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-left {
-  animation: slideInLeft 1s ease-out forwards;
-}
-
-.animate-right {
-  animation: slideInRight 1s ease-out forwards;
+/* Optional: Animations (already handled by framer-motion, but can add hover/extra) */
+.profile-img:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
 }

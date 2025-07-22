@@ -2,9 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import "../style/PortfolioSection.css";
 
-import pro1 from "../image/pro1.jpg";
-import pro2 from "../image/pro2.jpg";
-import pro3 from "../image/pro3.jpg";
+import pro1 from "../image/int1.jpeg";
+import pro2 from "../image/int4.jpeg";
+import pro3 from "../image/int3.jpeg";
+import pro4 from "../image/int2.jpeg";
 
 const cardVariants = {
   hidden: { opacity: 0, scale: 0.9 },
@@ -35,6 +36,12 @@ function PortfolioSection() {
       img: pro3,
       title: "Luxury Bedroom",
       desc: "Warm, cozy, and luxurious bedroom setup with custom lighting."
+    },
+    {
+      img: pro4,
+     title: "Modular Kitchen",
+desc: "Elegant and space-efficient modular kitchen design with modern appliances and smart storage solutions."
+
     }
   ];
 
@@ -42,11 +49,11 @@ function PortfolioSection() {
     <section className="portfolio-section" id="portfolio">
       <div className="container text-center">
         <h2 className="portfolio-heading mb-4">Portfolio</h2>
-        <div className="row g-4">
+        <div className="row g-3">
           {portfolioItems.map((item, i) => (
             <motion.div
               key={i}
-              className="col-md-4"
+              className="col-md-3"
               custom={i}
               initial="hidden"
               whileInView="visible"

@@ -1,30 +1,36 @@
 import React from "react";
 import "../style/AboutSection.css";
-import profileImg from "../image/fur1.jpg";
+import profileImg from "../image/darsh1.jpg";
 import { motion } from "framer-motion";
 
 function AboutSection() {
   return (
     <section className="about-section" id="about">
-      <div className="container">
-        <h2 className="about-heading text-center">About Me</h2>
-        <div className="about-content row align-items-center">
+      <div className="container text-center">
+        <h2 className="about-heading">About Me</h2>
+        <div className="about-card">
+          
+          {/* 👈 Image from Left */}
           <motion.div
-            className="col-md-5 text-center mb-4 mb-md-0"
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <img src={profileImg} alt="Darsh Jariwala" className="img-fluid rounded profile-img" />
+            <img
+              src={profileImg}
+              alt="Darsh Jariwala"
+              className="img-fluid profile-img"
+            />
           </motion.div>
 
+          {/* 👉 Text from Right */}
           <motion.div
-            className="col-md-7"
+            className="about-description"
             initial={{ x: 100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <p className="about-description">
+            <p>
               Hello! I’m <strong>Darsh Jariwala</strong>, a passionate interior designer based in Gujarat.
               I hold a Bachelor's degree in Interior Design from Veer Narmad South Gujarat University.
               <br /><br />
