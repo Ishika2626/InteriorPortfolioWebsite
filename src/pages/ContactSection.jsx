@@ -30,15 +30,10 @@ function ContactSection() {
   return (
     <section className="contact-section" id="contact">
       <div className="container">
-        <motion.h2
-          className="contact-heading text-center"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ amount: 0.5  }}
-        >
-          Contact Me
-        </motion.h2>
+<h2 className="contact-heading text-center">
+  Contact Me
+</h2>
+
 
         <p className="contact-subtext text-center">
           I’d love to hear from you! Whether you have a project in mind or just want to say hi.
