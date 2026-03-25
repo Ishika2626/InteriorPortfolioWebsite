@@ -7,7 +7,7 @@ function HeroSection() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { 
+      transition: {
         staggerChildren: 0.15,
         delayChildren: 0.2
       }
@@ -16,8 +16,8 @@ function HeroSection() {
 
   const textVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
     }
@@ -25,10 +25,10 @@ function HeroSection() {
 
   return (
     <section className="hero-modern" id="home">
-      <div className="hero-bg-text">ARCHITECTURAL</div>
-      
+      <div className="hero-bg-text">INTERIOR</div>
+
       <div className="container h-100 d-flex flex-column justify-content-center align-items-center text-center">
-        <motion.div 
+        <motion.div
           className="hero-text-wrap"
           variants={containerVariants}
           initial="hidden"
@@ -51,10 +51,6 @@ function HeroSection() {
             </a>
           </motion.div>
         </motion.div>
-      </div>
-
-      <div className="scroll-hint">
-        <div className="mouse"></div>
       </div>
     </section>
   );

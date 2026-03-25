@@ -7,14 +7,8 @@ function FooterSection() {
       <div className="footer-container">
         <div className="footer-top">
           <div className="footer-brand">
-            <h2>DARSH<span className="text-granite">.</span></h2>
-            <p className="footer-tagline">Architectural Elegance in Every Space</p>
-          </div>
-
-          <div className="footer-contact">
-            <h4>Contact</h4>
-            <a href="tel:+919662277778">+91 96622 77778</a>
-            <a href="mailto:darshjari09@gmail.com">darshjari09@gmail.com</a>
+            <h2>DARSH</h2>
+            <p className="footer-tagline">Transforming Interiors into Timeless Spaces</p>
           </div>
         </div>
 
