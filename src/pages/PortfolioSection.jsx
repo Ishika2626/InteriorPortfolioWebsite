@@ -8,14 +8,14 @@ import pro3 from "../image/int3.jpeg";
 import pro4 from "../image/int2.jpeg";
 
 const cardVariants = {
-  hidden: { opacity: 0, scale: 0.9 },
+  hidden: { opacity: 0, y: 40 },
   visible: (i) => ({
     opacity: 1,
-    scale: 1,
+    y: 0,
     transition: {
-      delay: i * 0.2,
-      duration: 0.5,
-      ease: "easeOut"
+      delay: i * 0.15,
+      duration: 1,
+      ease: [0.16, 1, 0.3, 1]
     }
   })
 };
@@ -25,51 +25,49 @@ function PortfolioSection() {
     {
       img: pro1,
       title: "Modern Living Room",
-      desc: "Stylish and functional living space design with minimal elements."
+      desc: "Sophisticated minimalism meets functional elegance."
     },
     {
       img: pro2,
       title: "Elegant Workspace",
-      desc: "Clean, sleek home office interior that balances productivity and style."
+      desc: "A focused environment designed for clarity and productivity."
     },
     {
       img: pro3,
       title: "Luxury Bedroom",
-      desc: "Warm, cozy, and luxurious bedroom setup with custom lighting."
+      desc: "Timeless comfort curated with refined material selections."
     },
     {
       img: pro4,
-     title: "Modular Kitchen",
-desc: "Elegant and space-efficient modular kitchen design with modern appliances and smart storage solutions."
-
+      title: "Modular Kitchen",
+      desc: "High-performance design tailored for modern culinary lifestyles."
     }
   ];
 
   return (
     <section className="portfolio-section" id="portfolio">
-      <div className="container text-center">
-        <h2 className="portfolio-heading mb-4">Portfolio</h2>
-        <div className="row g-3">
+      <div className="container">
+        <h2 className="portfolio-heading">Featured Portfolio</h2>
+        <div className="portfolio-grid row g-4">
           {portfolioItems.map((item, i) => (
             <motion.div
               key={i}
-              className="col-md-3"
+              className="col-lg-6 mb-4"
               custom={i}
               initial="hidden"
               whileInView="visible"
-              viewport={{ amount: 0.5  }}
+              viewport={{ once: true, amount: 0.1 }}
               variants={cardVariants}
             >
-              <motion.div
-                whileHover={{ y: -8, boxShadow: "0 12px 24px rgba(0,0,0,0.2)" }}
-                className="portfolio-card shadow-sm rounded"
-              >
-                <img src={item.img} alt={item.title} className="img-fluid rounded-top" />
-                <div className="portfolio-content p-3">
+              <div className="portfolio-card">
+                <div className="portfolio-img-wrapper">
+                  <img src={item.img} alt={item.title} />
+                </div>
+                <div className="portfolio-content">
                   <h5>{item.title}</h5>
                   <p>{item.desc}</p>
                 </div>
-              </motion.div>
+              </div>
             </motion.div>
           ))}
         </div>

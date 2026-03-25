@@ -1,103 +1,97 @@
 .about-section {
-  padding: 80px 20px;
-  background-color: #f9fafb;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.about-heading {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.8rem;
-  font-weight: 600;
-  color: #1f2937;
-  text-align: center;
+  background-color: var(--bg-main);
   position: relative;
-  text-transform: capitalize;
-  margin-bottom: 1.5rem;
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
 
-.about-heading::after {
-  content: "";
+.section-label {
   display: block;
-  width: 70px;
-  height: 4px;
-  background: linear-gradient(to right, #007bff, #00c6ff);
-  margin: 10px auto 0;
-  border-radius: 2px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--accent-warm);
+  margin-bottom: 1rem;
+  font-weight: 700;
 }
 
+.about-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-premium);
+}
 
-.about-card {
-  max-width: 1200px;
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  padding: 30px 40px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
+.premium-frame {
+  padding: 20px;
+  background: var(--bg-secondary);
+}
+
+.frame-border {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: -20px;
+  bottom: -20px;
+  border: 1px solid var(--accent-muted);
+  z-index: -1;
+}
+
+.about-profile-img {
+  width: 100%;
   height: auto;
-}
-
-/* ✅ Small Circular Profile Image */
-.profile-img {
-  width: 300px;
-  height: 300px;
   object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  margin: 0 auto;
   display: block;
-  transition: transform 0.3s ease;
+  filter: grayscale(20%);
+  transition: var(--transition-premium);
 }
 
-
-.profile-img:hover {
+.about-image-wrapper:hover .about-profile-img {
+  filter: grayscale(0%);
   transform: scale(1.05);
 }
 
-.about-description {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #333;
-  text-align: justify;
-  flex: 1;
-  min-width: 280px;
+.about-text-content {
+  padding-left: 2rem;
 }
 
-/* 🌐 Responsive: Tablet & Mobile */
-@media (max-width: 768px) {
-  .about-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
-
-  .about-description {
-    text-align: center;
-    font-size: 1rem;
-  }
-
-  .about-heading {
-    font-size: 2.2rem;
-  }
+.about-para {
+  font-size: 1rem;
+  color: var(--accent-dark);
+  font-weight: 400;
+  line-height: 1.7;
 }
 
-@media (max-width: 480px) {
-  .about-heading {
-    font-size: 1.8rem;
-  }
+.italic {
+  font-style: italic;
+}
 
-  .about-description {
-    font-size: 0.95rem;
-  }
+.about-heading {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  line-height: 1.1;
+  font-weight: 800;
+  color: var(--accent-dark);
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
 
-  .profile-img {
-    width: 120px;
-    height: 120px;
+.graduation-tag {
+  position: absolute;
+  bottom: 25px;
+  right: -10px;
+  background-color: var(--accent-dark);
+  color: var(--bg-main);
+  padding: 10px 15px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: var(--shadow-premium);
+  z-index: 10;
+}
+
+@media (max-width: 991px) {
+  .about-text-content {
+    padding-left: 0;
+    margin-bottom: 3rem;
   }
 }

@@ -1,60 +1,60 @@
 import React from "react";
 import "../style/HeroSection.css";
-import leftImage from "../image/fur1.jpg";  // Replace with actual path
-import rightImage from "../image/fur2.jpg"; // Replace with actual path
 import { motion } from "framer-motion";
 
 function HeroSection() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { 
+        staggerChildren: 0.15,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+    }
+  };
+
   return (
-    <section className="hero-section" id="hero">
-      <div className="container hero-layout">
-        
-        {/* Left Image */}
-        <motion.div
-          className="hero-image left"
-          initial={{ opacity: 0, x: -60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: false }}
+    <section className="hero-modern" id="home">
+      <div className="hero-bg-text">ARCHITECTURAL</div>
+      
+      <div className="container h-100 d-flex flex-column justify-content-center align-items-center text-center">
+        <motion.div 
+          className="hero-text-wrap"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
         >
-          <img src={leftImage} alt="Left view" className="rounded-image" />
+          <motion.span className="hero-top-label" variants={textVariants}>
+            Surat, Gujarat
+          </motion.span>
+          <motion.h1 className="hero-main-title" variants={textVariants}>
+            Designing <br />
+            <span className="italic-serif text-granite">Sophistication.</span>
+          </motion.h1>
+          <motion.p className="hero-subline mx-auto" variants={textVariants}>
+            Crafting modern and timeless environments that reflect your individuality and lifestyle.
+          </motion.p>
+          <motion.div className="hero-cta-group" variants={textVariants}>
+            <a href="#portfolio" className="modern-btn">
+              Explore Work
+              <span className="btn-line"></span>
+            </a>
+          </motion.div>
         </motion.div>
+      </div>
 
-       {/* Center Content */}
-<motion.div
-  className="hero-content"
-  initial={{ opacity: 0, y: 40 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6, delay: 0.2 }}
-  viewport={{ once: false }}
->
-  
-  <h1 className="hero-title">
-    Elevate Your Everyday <br />
-    <span>Living Experience</span>
-  </h1>
-
-  <p className="hero-subtitle">
-    We create luxurious and functional spaces that reflect your personality. 
-    Let’s transform your house into a dream home with timeless designs and modern aesthetics.
-  </p>
-
-  <a href="#portfolio" className="hero-btn">
-    View Portfolio
-  </a>
-</motion.div>
-
-
-        {/* Right Image */}
-        <motion.div
-          className="hero-image right"
-          initial={{ opacity: 0, x: 60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: false }}
-        >
-          <img src={rightImage} alt="Right view" className="rounded-image" />
-        </motion.div>
+      <div className="scroll-hint">
+        <div className="mouse"></div>
       </div>
     </section>
   );

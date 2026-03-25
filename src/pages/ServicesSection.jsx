@@ -11,14 +11,14 @@ import {
 import "../style/ServicesSection.css";
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 30 },
   visible: (i) => ({
     opacity: 1,
     y: 0,
     transition: {
-      delay: i * 0.2,
-      duration: 0.6,
-      ease: "easeOut",
+      delay: i * 0.1,
+      duration: 0.8,
+      ease: [0.16, 1, 0.3, 1],
     },
   }),
 };
@@ -59,17 +59,17 @@ function ServicesSection() {
 
   return (
     <section className="section-wrapper" id="services">
-      <div className="container text-center">
-        <h2 className="section-heading">Services</h2>
+      <div className="container">
+        <h2 className="section-heading text-center">Services</h2>
         <div className="services-grid">
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="service-card shadow"
+              className="service-card"
               custom={index}
               initial="hidden"
               whileInView="visible"
-              viewport={{ amount: 0.5  }}
+              viewport={{ once: true, amount: 0.2 }}
               variants={cardVariants}
             >
               <div className="service-icon">{service.icon}</div>

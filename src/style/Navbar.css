@@ -1,64 +1,98 @@
-/* Fancy brand with gradient */
-.fancy-brand {
-  font-weight: 700;
+.navbar {
+  padding: 30px 0;
+  background-color: transparent;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  transition: var(--transition-premium);
+}
+
+.navbar.scrolled {
+  padding: 15px 0;
+  background-color: var(--bg-main);
+  box-shadow: var(--shadow-soft);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-heading);
   font-size: 1.8rem;
-  background: linear-gradient(90deg, #fff5e1, #e0c097);
-/* cream to gold */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  color: var(--accent-dark);
+  text-decoration: none;
+  letter-spacing: 4px;
 }
 
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
 
-/* Navbar link underline animation */
-.nav-links .nav-link {
+.nav-item a {
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: var(--transition-premium);
   position: relative;
-  margin-left: 1.2rem;
-  font-weight: 500;
-  color: #333;
-  transition: color 0.3s ease;
 }
 
-.nav-links .nav-link::after {
+.nav-item a::after {
   content: '';
   position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: 0;
+  bottom: -5px;
   left: 0;
-  background-color: #007bff;
-  transition: width 0.3s;
+  width: 0;
+  height: 1px;
+  background-color: var(--accent-warm);
+  transition: var(--transition-premium);
 }
 
-.nav-links .nav-link:hover::after {
+.nav-item a:hover {
+  color: var(--accent-warm);
+}
+
+.nav-item a:hover::after {
   width: 100%;
 }
 
-.nav-links .nav-link:hover {
-  color: #007bff;
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--accent-dark);
 }
 
-/* Contact button link */
-.contact-btn {
-  padding: 0.4rem 1rem;
-  margin-left: 1.5rem;
-  background-color: #007bff;
-  border-radius: 30px;
-  color: white !important;
-  transition: background-color 0.3s ease;
-}
-
-.contact-btn:hover {
-  background-color: #0056b3;
-}
-
-/* Mobile tweaks */
-@media (max-width: 768px) {
-  .nav-links .nav-link {
-    margin-left: 0;
-    margin-bottom: 0.5rem;
+@media (max-width: 991px) {
+  .menu-toggle {
+    display: block;
   }
 
-  .contact-btn {
-    margin-left: 0;
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 280px;
+    background-color: var(--bg-secondary);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+  }
+
+  .nav-links.active {
+    right: 0;
   }
 }

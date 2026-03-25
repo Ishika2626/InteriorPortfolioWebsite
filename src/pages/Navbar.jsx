@@ -1,58 +1,51 @@
-import '../style/Navbar.css'; // custom styles
+import React, { useState, useEffect } from 'react';
+import '../style/Navbar.css';
 
 function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  function handleNavLinkClick() {
-  const navbarToggler = document.querySelector('.navbar-toggler');
-  const navbarCollapse = document.querySelector('.navbar-collapse');
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-  if (navbarToggler && navbarCollapse.classList.contains('show')) {
-    navbarToggler.click(); // This will trigger collapse
-  }
-}
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
-      <div className="container">
-        <a className="navbar-brand fancy-brand text-white" href="#home">
-  <strong style={{ color: '#ffffff' }}>Darsh</strong>
-  <span style={{ color: '#cccccc', fontWeight: 300 }}> | Interior Design Portfolio</span>
-</a>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+      <div className="container nav-container">
+        <a href="#hero" className="logo">
+          DARSH<span className="text-granite">.</span>
+        </a>
 
-
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto nav-links">
+        <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
              <li className="nav-item">
-              <a className="nav-link text-white" href="#home" onClick={handleNavLinkClick}>Home</a>
+              <a href="#hero" onClick={closeMenu}>Home</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="#portfolio" onClick={handleNavLinkClick}>Portfolio</a>
+              <a href="#about" onClick={closeMenu}>About</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="#services" onClick={handleNavLinkClick}>Services</a>
+              <a href="#services" onClick={closeMenu}>Services</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="#education" onClick={handleNavLinkClick}>Education</a>
+              <a href="#portfolio" onClick={closeMenu}>Portfolio</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="#about" onClick={handleNavLinkClick}>About</a>
+              <a href="#education" onClick={closeMenu}>Journey</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="#contact" onClick={handleNavLinkClick}>Contact</a>
+              <a href="#contact" onClick={closeMenu}>Contact</a>
             </li>
-          </ul>
+        </ul>
+
+        <div className="menu-toggle" onClick={toggleMenu}>
+          {isMenuOpen ? '✕' : '☰'}
         </div>
       </div>
     </nav>
