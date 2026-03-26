@@ -27,7 +27,7 @@ function HeroSection() {
     <section className="hero-modern" id="home">
       <div className="hero-bg-text">INTERIOR</div>
 
-      <div className="container h-100 d-flex flex-column justify-content-center align-items-center text-center">
+      <div className="container d-flex flex-column justify-content-center align-items-center text-center">
         <motion.div
           className="hero-text-wrap"
           variants={containerVariants}

@@ -70,8 +70,7 @@ function EducationSection() {
               >
                 Experience
               </button>
-              {activeTab === "education" && <motion.div layoutId="tab-active" className="tab-indicator left" />}
-              {activeTab === "experience" && <motion.div layoutId="tab-active" className="tab-indicator right" />}
+              <div className={`tab-indicator ${activeTab === "education" ? "left" : "right"}`} />
             </div>
           </div>
         </header>
